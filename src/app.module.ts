@@ -6,12 +6,16 @@ import { AuthModule } from './auth/module/auth.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     "type": "mysql",
-    "host": "9c2.h.filess.io",
-    "port": 3306,
-    "username": "New_sangslave",
-    "password": "f124192272eb46268f06841395b6cebf637b0868",
-    "database": "New_sangslave",
+      "host": "gateway01.us-west-2.prod.aws.tidbcloud.com",
+    "port": 4000,
+    "username": "2MFseJq3FzQ2u4J.root",
+    "password": "BpqGQllyVdF9s7X3",
+    "database": "test",
     "logging": true,
+    "ssl": {
+      minVersion: 'TLSv1.2',
+      rejectUnauthorized: true
+    },
     // synchronize: true,
     "entities": ["dist/**/*.entity.js"],
   }) ,UsersModule, AuthModule]
